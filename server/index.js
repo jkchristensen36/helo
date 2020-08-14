@@ -22,6 +22,8 @@ massive({
 
 
 // endpoints
+app.post('auth/login', ctrl.register)
+// app.post('/auth/login', ctrl.login)
 
 
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`))
