@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { logDOM } from '@testing-library/react';
 import axios from 'axios';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 class Auth extends Component {
     constructor(){
@@ -33,8 +32,9 @@ class Auth extends Component {
 
     register = () => {
         const {email, password} = this.state;
+        console.log(1)
         axios.post('/auth/register', {email, password}).then(res => {
-            this.props.loginUser(res.data);
+            console.log(2)
             this.props.history.push('/dashboard');
         }).catch(err => {
             console.log(err);

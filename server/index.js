@@ -15,15 +15,13 @@ massive({
     ssl: {
         rejectUnauthorized: false
     }
-    }).then (db => {
+    }).then ( db => {
         app.set('db', db)
         console.log('Connected to db')
     }).catch( err => console.log(err))
 
-
 // endpoints
-app.post('auth/login', ctrl.register)
+app.post('auth/register', ctrl.register)
 // app.post('/auth/login', ctrl.login)
-
 
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`))
